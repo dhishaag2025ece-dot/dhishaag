@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoomBook - Confirmation</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="card confirmation">
+        <h1>Booking Confirmed!</h1>
+
+        <p>Thank you for booking with RoomBook.</p>
+
+        <div id="bookingDetails"></div>
+
+        <button onclick="window.location.href='dashboard.html'">
+            Back to Dashboard
+        </button>
+
+        <button onclick="window.location.href='my-bookings.html'">
+            My Bookings
+        </button>
+    </div>
+</div>
+
+<script>
+    const booking = JSON.parse(sessionStorage.getItem("lastBooking"));
+
+    const details = document.getElementById("bookingDetails");
+
+    if (booking) {
+        details.innerHTML = `
+            <p><strong>Room:</strong> ${booking.room?.name || "Room"}</p>
+            <p><strong>Date:</strong> ${booking.bookingDate}</p>
+            <p><strong>Time:</strong> ${booking.startTime} - ${booking.endTime}</p>
+            <p><strong>Status:</strong> ${booking.status}</p>
+        `;
+    }
+</script>
+
+</body>
+</html>

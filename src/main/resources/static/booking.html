@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoomBook - Book Room</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<nav>
+    <h2>RoomBook</h2>
+    <div>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="my-bookings.html">My Bookings</a>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="card">
+        <h1>Book a Meeting Room</h1>
+
+        <form id="bookingForm">
+
+            <label>Room</label>
+            <select id="roomId" required>
+                <option value="">Select Room</option>
+            </select>
+
+            <label>Date</label>
+            <input type="date" id="date" required>
+
+            <label>Start Time</label>
+            <input type="time" id="startTime" required>
+
+            <label>End Time</label>
+            <input type="time" id="endTime" required>
+
+            <button type="submit">Book Room</button>
+        </form>
+
+        <p id="message"></p>
+
+        <a href="dashboard.html">Back to Dashboard</a>
+    </div>
+</div>
+
+<script src="/js/booking.js"></script>
+</body>
+</html>
